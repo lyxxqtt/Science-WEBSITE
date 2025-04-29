@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecopulse</title>
+    <link rel="stylesheet" href="quiz-page.css">
+    <script src="main-java.js"></script>
+    <link rel="icon" href="images/icon.svg" type="image/svg+xml">
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <header>
+      <div>
+        <h1 id="siteName">Ecology Quiz</h1>
+      </div>
+
+      <!-- Hamburger Toggle --> <!-- For mobile sizes -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+      <label for="nav-toggle" class="hamburger">&#9776;</label>
+
+      <!-- Navigation -->
+      <nav class="navbar">
+        <a href="index.html"><strong>HOME</strong></a>
+        <a href="ice-breaker.html"><strong>ICE BREAKER</strong></a>
+        <a href="quiz-page.html"><strong>QUIZ</strong></a>
+        <a href="about.html"><strong>ABOUT</strong></a>
+      </nav>
+    </header>
+    <!-- END OF Navigation -->
+
+            <!-- topic section -->
+      <div id="topic"> 
+         <div class="topic-box">
+        <h1 class="topic-title">ECOLOGY</h1>
+          </div>
+        <p class="topic-subtitle">Lorem ipsum dolor sit amet, consectetur</p>
+     </div>
+
+
+
+    <div id="instructions">
+        <div id="insText">
+          <h2>Instructions:</h2>
+          <h3>For Website Users:</h3>
+          <ol>
+            <li>Click/Press the letter of the correct answer.</li>
+            <li>You have 1 minute to answer each question.</li>
+          </ol>
+          <h3>For the Class:</h3>
+          <ol>
+            <li>Get a 1/4 sheet of yellow paper. Write the numbers 1 to 5 in a column.</li>
+            <li>This quiz is a multiple-choice format. Write the letter of your answer.</li>
+            <li>Capital letters only. No erasures. (There will be deductions)</li>
+            <li>You have 1 minute to answer each question.</li>
+          </ol>
+        </div>
+      </div>
+      
+      <div id="start">
+        <button id="startButton">Start Quiz!</button>
+      </div>
+
+      <br>     <br>
+      
+
+
+    <!--navbar stay hover-->
+    <script>
+      const aboutLink = document.querySelector('.navbar a[href="quiz-page.html"]');
+      if (aboutLink) {
+        aboutLink.classList.add('force-hover');
+      }
+    </script>
+
+
+    <script>
+      // When scroll the navbar
+      window.onscroll = function() {
+        var header = document.querySelector('header');
+        if (window.scrollY > 50) {  
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      };
+    </script>
+  </body>
+</html>

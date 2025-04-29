@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecopulse</title>
+    <link rel="stylesheet" href="about.css">
+    <link rel="icon" href="images/icon.svg" type="image/svg+xml">
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <header>
+      <div>
+        <h1 id="siteName">Ecopulse </h1>
+      </div>
+
+      <!-- Hamburger Toggle --> <!-- For mobile sizes -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+      <label for="nav-toggle" class="hamburger">&#9776;</label>
+
+      <!-- Navigation -->
+      <nav class="navbar">
+        <a href="index.html"><strong>HOME</strong></a>
+        <a href="ice-breaker.html"><strong>ICE BREAKER</strong></a>
+        <a href="quiz-page.html"><strong>QUIZ</strong></a>
+        <a href="about.html"><strong>ABOUT</strong></a>
+      </nav>
+    </header>
+    <!-- END OF Navigation -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Main Section -->
+    <section class="main">
+        <div class="main-content">
+          <h1>About Us</h1>
+          <p>We are ICT-202 GROUP 04, a team of passionate designers and developers who created this site to bring people together. Our goal is to provide an engaging space where users can explore, learn, and grow.</p>
+        </div>
+    </section>
+
+    <!-- About This Site Section -->
+    <section class="about-section">
+        <h2>About This Site</h2>
+        <p>This website was created as part of our Performance Task for the Earth and Life Science course. The goal of this project is to provide an informative and interactive platform focused on ecology. The site was developed using HTML, CSS, and JavaScript to deliver a seamless and engaging user experience.</p>
+        <p class="credit">Created by ICT-202 GROUP 4</p>
+    </section>
+    <!-- END OF About This Site Section -->
+    <br>
+
+
+
+
+    <!-- Members Section -->
+    <section class="members-section">
+      <h2 class="section-title">Our Team</h2>
+      <div class="members-grid">
+
+        <div class="member-card">
+          <div class="img-wrapper">
+            <img src="https://static1.cbrimages.com/wordpress/wp-content/uploads/2022/09/cobra-kai-kenny-(1)-(1).jpeg" alt="Keith Sebastian Desantos">
+          </div>
+          <div class="info">
+            <h3>Keith Sebastian Desantos</h3>
+            <p class="role">...</p>
+            <p class="bio">...</p>
+            <div class="tags">
+              <span>...</span>
+              <span>...</span>
+            </div>
+          </div>
+        </div>
+    
+        <div class="member-card">
+          <div class="img-wrapper">
+            <img src="/images/MEMBERS/Calyx James Molina.jpg" alt="Calyx James Molina">
+          </div>
+          <div class="info">
+            <h3>Calyx James Molina</h3>
+            <p class="role">Frontend Developer</p>
+            <p class="bio">UI/UX DESIGNER/CODER</p>
+            <div class="tags">
+              <span>UI/UX Designer</span>
+              <span>Frontend Developer</span>
+            </div>
+          </div>
+        </div>
+    
+        <div class="member-card">
+          <div class="img-wrapper">
+            <img src="/images/MEMBERS/Christian James Ang-og.jpg" alt="Christian James Ang-og">
+          </div>
+          <div class="info">
+            <h3>Christian James Ang-og</h3>
+            <p class="role">...</p>
+            <p class="bio">...</p>
+            <div class="tags">
+              <span>...</span>
+              <span>...</span>
+            </div>
+          </div>
+        </div>
+    
+        <div class="member-card">
+          <div class="img-wrapper">
+            <img src="/images/MEMBERS/Eugene Escobar.jpg" alt="Eugene Escobar">
+          </div>
+          <div class="info">
+            <h3>Eugene Escobar</h3>
+            <p class="role">...</p>
+            <p class="bio">...</p>
+            <div class="tags">
+              <span>...</span>
+              <span>...</span>
+            </div>
+          </div>
+        </div>
+    
+        <div class="member-card">
+          <div class="img-wrapper">
+            <img src="/images/MEMBERS/Fredelino Oribiana.jpg" alt="Fredelino Oribiana">
+          </div>
+          <div class="info">
+            <h3>Fredelino Oribiana</h3>
+            <p class="role">...</p>
+            <p class="bio">...</p>
+            <div class="tags">
+              <span>...</span>
+              <span>...</span>
+            </div>
+          </div>
+        </div>
+    
+        <div class="member-card">
+          <div class="img-wrapper">
+            <img src="/images/MEMBERS/John Benedict Portugal.jpg" alt="John Benedict Portugal">
+          </div>
+          <div class="info">
+            <h3>John Benedict Portugal</h3>
+            <p class="role">...</p>
+            <p class="bio">...</p>
+            <div class="tags">
+              <span>...</span>
+              <span>...</span>
+            </div>
+          </div>
+        </div>
+    
+        <div class="member-card">
+          <div class="img-wrapper">
+            <img src="/images/MEMBERS/Joseph Obmasca.jpg" alt="Joseph Obmasca">
+          </div>
+          <div class="info">
+            <h3>Joseph Obmasca</h3>
+            <p class="role">...</p>
+            <p class="bio">...</p>
+            <div class="tags">
+              <span>...</span>
+              <span>...</span>
+            </div>
+          </div>
+        </div>
+    
+      </div>
+    </section>
+    
+    
+    
+    
+
+    
+
+
+
+
+
+
+
+    <!--navbar stay hover-->
+    <script>
+      const aboutLink = document.querySelector('.navbar a[href="about.html"]');
+      if (aboutLink) {
+        aboutLink.classList.add('force-hover');
+      }
+    </script>
+    
+
+
+
+    <!-- CSS WHEN U SCROLL IN Main Section-->
+<style>
+.main-content {
+    opacity: 0;
+    transform: translateY(50px) scale(0.95); 
+    filter: blur(5px); 
+    transition: opacity 1s ease, transform 1s ease, filter 1s ease;
+}
+
+.main-content h1 {
+    transition-delay: 0.2s;
+}
+
+.main-content p {
+    transition-delay: 0.4s;
+}
+
+.main-content.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1); 
+    filter: blur(0); 
+}
+</style>
+
+<!-- JS WHEN U SCROLL IN Main Section-->
+<script>
+const content = document.querySelector('.main-content');
+
+const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        } else {
+            entry.target.classList.remove('visible');
+        }
+    });
+}, {
+    threshold: 0.5
+});
+
+observer.observe(content);
+
+</script>
+
+    <!-- CSS WHEN U SCROLL IN About This Site Section -->
+<style>
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.about-section {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+
+.about-section.visible {
+    opacity: 1;
+    pointer-events: auto;
+    animation: fadeInUp 1s ease forwards;
+}
+
+.about-section h2,
+.about-section p {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.about-section h2.visible,
+.about-section p.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.about-section p:nth-of-type(1) {
+    animation-delay: 0.5s;
+}
+
+.about-section p:nth-of-type(2) {
+    animation-delay: 1s;
+}
+
+.about-section h2 {
+    font-weight: 700;
+    font-size: 2.2rem;
+    color: #333;
+}
+
+.about-section p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+</style>
+
+
+
+
+    <!-- JS WHEN U SCROLL IN About This Site Section -->
+<script>
+function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return rect.top < window.innerHeight && rect.bottom > 0;
+}
+
+function handleAboutSectionAnimations() {
+    const section = document.querySelector(".about-section");
+    const heading = document.querySelector(".about-section h2");
+    const paragraphs = document.querySelectorAll(".about-section p");
+
+    if (section) {
+        if (isInViewport(section)) {
+            section.classList.add("visible");
+            heading.classList.add("visible");
+            paragraphs.forEach((p) => {
+                p.classList.add("visible");
+            });
+        } else {
+            section.classList.remove("visible");
+            heading.classList.remove("visible");
+            paragraphs.forEach((p) => {
+                p.classList.remove("visible");
+            });
+        }
+    }
+}
+
+window.addEventListener("scroll", handleAboutSectionAnimations);
+window.addEventListener("load", handleAboutSectionAnimations);
+
+
+</script>
+
+    <!-- CSS WHEN U SCROLL IN members-section -->
+<style>
+.section-title {
+  opacity: 0;
+  transform: rotateX(15deg);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.section-title.visible {
+  opacity: 1;
+  transform: rotateX(0);
+}
+
+.member-card {
+  opacity: 0;
+  transform: scale(0.8) rotateY(20deg);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.member-card.visible {
+  opacity: 1;
+  transform: scale(1) rotateY(0);
+}
+</style>
+
+
+    <!-- JS WHEN U SCROLL IN members-section -->
+<script>
+function isInViewport(el) {
+  const rect = el.getBoundingClientRect();
+  return rect.top < window.innerHeight && rect.bottom > 0;
+}
+
+function handleMemberAnimations() {
+  const sectionTitle = document.querySelector(".section-title");
+  const memberCards = document.querySelectorAll(".member-card");
+
+  if (sectionTitle && isInViewport(sectionTitle)) {
+    sectionTitle.classList.add("visible");
+  } else if (sectionTitle) {
+    sectionTitle.classList.remove("visible");
+  }
+
+  memberCards.forEach(card => {
+    if (isInViewport(card)) {
+      card.classList.add("visible");
+    } else {
+      card.classList.remove("visible");
+    }
+  });
+}
+
+window.addEventListener("scroll", handleMemberAnimations);
+window.addEventListener("load", handleMemberAnimations);
+
+
+</script>
+    
+<script src="main-java.js"></script>
+  </body>
+</html>

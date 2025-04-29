@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -234,188 +235,86 @@
 
   /* END OF TOPIC SECTION */
 
-
-
-
-
-
-
-  
-  
-/* TOPIC INTRODUCTION SECTION */
-.topicIntroduction {
-  display: flex;
-  justify-content: center;
-  background-color: #fff;
-  padding: 4rem 1rem;
-}
-
-.topicContent {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  max-width: 1200px;
-  width: 100%;
-  padding: 2rem;
-  background-color: #f9f9f9;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  border-radius: 1rem;
-}
-
-.topicPic {
-  width: 100%;
-  max-width: 450px;
-  border-radius: 1rem;
-  object-fit: cover;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
-}
-
-.introText {
-  flex: 1;
-  line-height: 1.6;
-}
-
-.introText h1 {
-  font-family: 'Libre Baskerville', serif;
-  font-size: 2rem;
-  color: #222;
-  margin-bottom: 1rem;
-  font-weight: 700;
-}
-
-.introText p,
-.introText ul, 
-.introText li {
-  font-family: 'Merriweather', serif;
-  font-size: 1.1rem;
-  color: #111;
-}
-
-.introText ul li {
-  margin-bottom: 1rem;
-  list-style: none;
-  padding-left: 0; 
-}
-
-@media (max-width: 768px) {
-  .topicContent {
-    flex-direction: column;
-    padding: 1rem;
+/* Instructions Section */
+#instructions {
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+    padding: 3rem;
+    background-color: #f4f7fa; 
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    width: 75%; 
+    margin-left: auto;
+    margin-right: auto;
+    transition: box-shadow 0.3s ease-in-out;
   }
-
-  .introText h1 {
-    font-size: 1.5rem;
-  }
-}
-/* END OF TOPIC INTRODUCTION SECTION */
-
-
-
-
-
-
-
-
-
-
-
-
-
   
-/* SUBTOPICS SECTION */
-#subtopics {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #f0fdf4;
-  padding: 4rem 2rem;
-}
-
-#subtopicText {
-  max-width: 900px;
-  text-align: center;
-  font-size: 1.2rem;
-  color: #2e7d32;
-  padding: 2rem;
-  border-radius: 1rem;
-  background-color: #ffffff;
-  box-shadow: 0 5px 20px rgba(46, 125, 50, 0.1);
-  border: 2px solid #c8e6c9; 
-}
-
-#subtopicText h1 {
-  font-size: 2.5rem;
-  color: #2e7d32;
-  margin-bottom: 1rem;
-  font-family: 'Libre Baskerville', serif; /* Elegant serif font */
-  font-weight: 600; /* Medium weight for a refined and clear look */
-  letter-spacing: 0.5px; /* Slightly increased letter-spacing for clarity */
-  line-height: 1.4; /* Improved line-height for readability */
-  text-transform: uppercase; /* Capitalized for a more formal and structured touch */
-}
-
-
-
-
-#subtopicSections {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 2rem;
-  max-width: 1200px;
-  margin-top: 3rem;
-}
-
-.subtopicWindow {
-  flex: 1 1 300px;
-  background-color: #e8f5e9;
-  padding: 2rem;
-  border-radius: 1rem;
-  border: 2px solid #c8e6c9;
-  box-shadow: 0 10px 30px rgba(46, 125, 50, 0.1);
-  text-align: center;
-  transition: transform 0.3s ease;
-  margin-bottom: 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.subtopicWindow img {
-  width: 80%;
-  max-width: 200px;
-  height: auto;
-  margin: 0 auto 1rem auto; 
-  display: block;
-  border-radius: 0.5rem;
-}
-
-
-.subtopicWindow h2 {
-  font-size: 1.5rem;
-  color: #2e7d32;
-  margin-bottom: 1rem;
-  font-weight: 600;
-}
-
-.subtopicWindow p {
-  flex-grow: 1; 
-  color: #2e7d32;
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-.subtopicWindow a {
-  margin-top: 2rem; 
-  align-self: center; 
-  color: #1b5e20;
-  text-decoration: none;
-  font-weight: bold;
-  border-bottom: 2px solid transparent;
-}
-
-
-
-
-/* END OF SUBTOPICS SECTION */
-
+  #instructions:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); 
+  }
+  
+  #insText {
+    max-width: 850px; 
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  #insText h2 {
+    text-align: center;
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: #28a745;
+    margin-bottom: 2rem;
+  }
+  
+  #insText h3 {
+    font-size: 1.6rem;
+    color: #333;
+    margin-top: 2rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+  
+  #insText ol {
+    list-style-position: inside;
+    margin-left: 2rem;
+    padding-left: 0; 
+  }
+  
+  #insText ol li {
+    margin: 1rem 0;
+    font-size: 1.3rem;
+    line-height: 1.6;
+  }
+  
+  #start {
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+  }
+  
+  #startButton {
+    padding: 1.2rem 3rem;
+    font-size: 1.8rem;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-weight: 600;
+  }
+  
+  #startButton:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+  }
+  
+  #startButton:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(40, 167, 69, 0.7);
+  }
+  

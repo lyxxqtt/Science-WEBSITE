@@ -12,3 +12,20 @@ const images = [
   }
 
   setInterval(changeBackground, 5000); 
+
+  // When scroll the navbar
+  window.onscroll = function() {
+    var header = document.querySelector('header');
+    if (window.scrollY > 50) {  
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  };
+  
+
+
+
+
+
+
