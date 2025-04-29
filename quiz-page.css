@@ -10,157 +10,6 @@
     scroll-behavior: smooth;
   }
   
-  /* NAVBAR SECTION */
-  header {
-    background-color: #222222; 
-    color: #fff;
-    padding: 1rem 3rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  }
-  
-  header.scrolled {
-    background: rgba(34, 34, 34, 0.7);
-    backdrop-filter: blur(10px); 
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3); 
-  }
-  
-  
-  #siteName {
-    font-size: 2rem; 
-    font-weight: bold;
-    letter-spacing: 2px; 
-    font-family: 'Roboto', sans-serif; 
-  }
-  
-  .navbar {
-    display: flex;
-    gap: 1.5rem;
-    align-items: center;
-    justify-content: flex-end;
-    transition: transform 0.3s ease, opacity 0.3s ease-in-out;
-    opacity: 1; 
-    transform: none; 
-  }
-  
-  .navbar a {
-    color: #fff;
-    text-decoration: none;
-    padding: 0.7rem 1.5rem;
-    border-radius: 30px;
-    position: relative; 
-    overflow: hidden; 
-    transition: color 0.3s ease, transform 0.3s ease; 
-  }
-
-  .navbar a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: #28a745; 
-    transition: width 0.4s ease-in-out, left 0.4s ease-in-out; 
-  }
-
-  .navbar a:hover::after {
-    width: 100%; 
-    left: 0; 
-  }
-
-
-  .navbar a:hover {
-    color: #28a745;
-    transform: scale(1.1); 
-  }
-
-  
-  .hamburger {
-    display: none;
-    font-size: 2.5rem; 
-    color: #fff; 
-    cursor: pointer;
-    user-select: none;
-    transition: transform 0.3s ease, opacity 0.3s ease-in-out;
-    background-color: transparent;
-    border: none; 
-    position: relative;
-    z-index: 1001;
-  }
-  
-  .hamburger:hover {
-    transform: rotate(90deg); 
-  }
-  
-  .nav-toggle {
-    display: none;
-  }
-
-  .navbar a.force-hover {
-    color: #28a745; 
-    transform: scale(1.1);
-}
-
-.navbar a.force-hover::after {
-    width: 100%;
-    left: 0;
-}
-
-  /*RESPONSIVE IN PORTRAIT*/
-  @media (max-width: 768px) {
-    .navbar {
-      position: absolute;
-      top: 0;
-      left: -100%;
-      height: 100vh;
-      width: 100%;
-      background-color: #222222; 
-      flex-direction: column;
-      justify-content: center;
-      align-items: center; 
-      padding: 2rem;
-      gap: 2rem;
-      box-shadow: 4px 0 8px rgba(0, 0, 0, 0.2); 
-      transition: left 0.3s ease, opacity 0.3s ease-in-out;
-      opacity: 0;
-    }
-      .hamburger {
-      display: block;
-    }
-  
-    .nav-toggle:checked + .hamburger + .navbar {
-      left: 0;
-      opacity: 1;
-    }
-  
-    .nav-toggle:checked + .hamburger + .navbar a {
-      opacity: 1;
-      transform: translateX(0);
-      transition: transform 0.4s ease, opacity 0.4s ease;
-      transition-delay: 0.2s; 
-      text-align: center;
-    }
-  
-    .nav-toggle:checked + .hamburger {
-      opacity: 0.5; 
-      transform: rotate(180deg); 
-    }
-  
-    .navbar a {
-      width: 100%;
-      text-align: center; 
-    }
-  }
-  
-/* END OF NAVBAR SECTION */
   
   /* TOPIC SECTION */
   #topic {
@@ -178,8 +27,8 @@
     text-align: center;
     position: relative;
     border: none; 
-    overflow: hidden; /* Prevents image overflow */
-    transition: background-image 1s ease-in-out, opacity 1s ease-in-out; /* Smooth transition */
+    overflow: hidden;
+    transition: background-image 1s ease-in-out, opacity 1s ease-in-out; 
   }
   
   #topic::before {
@@ -193,7 +42,7 @@
   }
   
   .topic-box {
-    background: rgba(255, 255, 255, 0.85);
+    background: rgba(17, 17, 17, 0.75); 
     padding: 3rem 4rem;
     border-radius: 16px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
@@ -204,7 +53,7 @@
   .topic-title {
     font-size: 5rem;
     font-weight: 900;
-    color: #617c4b;
+    color: #7ab44a;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-transform: uppercase;
     letter-spacing: 3px;
