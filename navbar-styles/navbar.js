@@ -6,3 +6,9 @@ window.onscroll = function() {
       header.classList.remove('scrolled');
     }
   };
+
+
+  document.getElementById('hamburger').addEventListener('click', function() {
+    const toggle = document.getElementById('nav-toggle');
+    toggle.checked = !toggle.checked; // Toggle the checkbox state
+  });
