@@ -8,7 +8,3 @@ window.onscroll = function() {
   };
 
 
-  document.getElementById('hamburger').addEventListener('click', function() {
-    const toggle = document.getElementById('nav-toggle');
-    toggle.checked = !toggle.checked; // Toggle the checkbox state
-  });
