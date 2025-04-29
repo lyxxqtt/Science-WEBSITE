@@ -21,18 +21,15 @@
 	<body>
         <!-- Navigation Bar -->
         <header>
-          <div class="logo-container">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <img src="/images/icon.svg" alt="Ecopulse Logo" style="height: 55px;">
             <h1 id="siteName">Ecopulse</h1>
           </div>
           
           
-            <!-- Hamburger Toggle --> <!-- For CELLPHONE SIZES/Portrait -->
-            <input type="checkbox" class="nav-toggle" id="nav-toggle">
-            <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
-              <span class="bar"></span>
-              <span class="bar"></span>
-              <span class="bar"></span>
-            </button>
+          <!-- Hamburger Toggle --> <!-- For mobile sizes -->
+          <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+          <label for="nav-toggle" class="hamburger">&#9776;</label>
             
           
             <!-- Navigation -->

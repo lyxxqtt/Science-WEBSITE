@@ -131,10 +131,6 @@
     left: 0;
 }
 
-.nav-toggle:checked + .hamburger + .navbar {
-  left: 0;
-  opacity: 1;
-}
 
 
   /*RESPONSIVE IN PORTRAIT*/
