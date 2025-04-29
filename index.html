@@ -142,11 +142,14 @@
 
       <!--navbar stay hover-->
       <script>
-        const aboutLink = document.querySelector('.navbar a[href="index.html"]');
-        if (aboutLink) {
-          aboutLink.classList.add('force-hover');
-        }
+        document.addEventListener('DOMContentLoaded', () => {
+          const aboutLink = document.querySelector('.navbar a[href="index.html"]');
+          if (aboutLink) {
+            aboutLink.classList.add('force-hover');
+          }
+        });
       </script>
+      
 
       <style>
         .navbar a.force-hover {
