@@ -21,56 +21,39 @@
   }
   
   
-.logo-container {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  position: relative;
-}
+  #siteName {
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 
-.logo {
-  width: 40px; /* Adjust size of the logo */
-  height: auto;
-  transition: transform 0.3s ease;
-}
-
-#siteName {
-  font-size: 2rem;
-  font-weight: bold;
-  letter-spacing: 2px;
-  font-family: 'Roboto', sans-serif;
-  text-transform: uppercase;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-  position: relative;
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-
-/* Add hover effect on logo */
-.logo:hover {
-  transform: scale(1.1); /* Slight zoom on hover */
-}
-
-#siteName::after {
-  content: '';
-  position: absolute;
-  left: 50%;
-  bottom: -8px;
-  transform: translateX(-50%);
-  width: 0%;
-  height: 3px;
-  background: linear-gradient(to right, #66bb6a, #43a047);
-  border-radius: 2px;
-  transition: width 0.4s ease;
-}
-
-#siteName:hover {
-  color: #388e3c;
-  transform: scale(1.03);
-}
-
-#siteName:hover::after {
-  width: 80%;
-}
+    position: relative;
+    transition: color 0.3s ease;
+  }
+  
+  #siteName::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -8px;
+    transform: translateX(-50%);
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(to right, #66bb6a, #43a047);
+    border-radius: 2px;
+    transition: width 0.4s ease;
+  }
+  
+  #siteName:hover {
+    color: #388e3c;
+    transform: scale(1.03);
+  }
+  
+  #siteName:hover::after {
+    width: 80%;
+  }
   
   
   
@@ -149,56 +132,10 @@
 }
 
   /*RESPONSIVE IN PORTRAIT*/
-@media (max-width: 1024px) {
-  .hamburger {
-    display: block !important;
-  }
-
-  .navbar {
-    position: absolute;
-    top: 100%;
-    left: -100%;
-    width: 100%;
-    height: 100vh;
-    flex-direction: column;
-    background-color: #222222;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    gap: 2rem;
-    padding: 2rem;
-    transition: left 0.3s ease, opacity 0.3s ease-in-out;
-  }
-
-  .nav-toggle:checked + .hamburger + .navbar {
-    left: 0;
-    opacity: 1;
-  }
-}
-
-  
-  
-  @media (max-width: 480px) {
-    header {
-      padding: 0.8rem 1rem;
-    }
-  
-    .logo {
-      width: 25px;
-    }
-  
-    #siteName {
-      font-size: 1.2rem;
-    }
-  
-    .hamburger {
-      font-size: 2rem;
-    }
-  }
-  
   @media (max-width: 768px), (orientation: portrait) {
     .hamburger {
       display: block !important; 
+      font-size: 1.6rem;
     }
   
     .navbar {
@@ -236,6 +173,5 @@
       font-size: 1.3rem;
     }
   }
-  
   
 /* END OF NAVBAR SECTION */
