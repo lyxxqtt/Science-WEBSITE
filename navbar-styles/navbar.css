@@ -21,6 +21,19 @@
   }
   
   
+  .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+  }
+  
+  .logo {
+    width: 40px; 
+    height: auto;
+    transition: transform 0.3s ease;
+  }
+  
   #siteName {
     font-size: 2rem;
     font-weight: bold;
@@ -28,9 +41,12 @@
     font-family: 'Roboto', sans-serif;
     text-transform: uppercase;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-
     position: relative;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .logo:hover {
+    transform: scale(1.1); 
   }
   
   #siteName::after {
@@ -133,6 +149,16 @@
 
   /*RESPONSIVE IN PORTRAIT*/
   @media (max-width: 768px) {
+    .logo {
+      width: 30px;
+    }
+  
+    #siteName {
+      font-size: 1.4rem;
+    }
+
+
+
     .navbar {
       position: absolute;
       top: 0;
@@ -151,6 +177,7 @@
     }
       .hamburger {
       display: block;
+      font-size: 1.4rem;
     }
   
     .nav-toggle:checked + .hamburger + .navbar {
