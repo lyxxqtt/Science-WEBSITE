@@ -25,6 +25,7 @@ body, html {
     background-attachment: fixed;
 }
 
+
 .main::before {
     content: '';
     position: absolute;
@@ -76,6 +77,9 @@ body, html {
 }
 
 @media (max-width: 768px) {
+    .main {
+        background-attachment: scroll;
+    }
     .main h1 {
         font-size: 2rem;
     }
@@ -86,6 +90,9 @@ body, html {
 }
 
 @media (max-width: 576px) {
+    .main {
+        background-attachment: scroll;
+    }
     .main h1 {
         font-size: 1.8rem;
     }
@@ -96,6 +103,9 @@ body, html {
 }
 
 @media (max-width: 375px) {
+    .main {
+        background-attachment: scroll;
+    }
     .main h1 {
         font-size: 1.6rem;
     }
