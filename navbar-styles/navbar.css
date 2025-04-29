@@ -1,207 +1,241 @@
-  /* NAVBAR SECTION */
-  header {
-    background-color: #222222; 
-    color: #fff;
-    padding: 1rem 3rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  }
-  
-  header.scrolled {
-    background: rgba(34, 34, 34, 0.7);
-    backdrop-filter: blur(10px); 
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3); 
-  }
-  
-  
-  .logo-container {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    position: relative;
-  }
-  
-  .logo {
-    width: 40px; 
-    height: auto;
-    transition: transform 0.3s ease;
-  }
-  
-  #siteName {
-    font-size: 2rem;
-    font-weight: bold;
-    letter-spacing: 2px;
-    font-family: 'Roboto', sans-serif;
-    text-transform: uppercase;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-    position: relative;
-    transition: color 0.3s ease, transform 0.3s ease;
-  }
-  
-  .logo:hover {
-    transform: scale(1.1); 
-  }
-  
-  #siteName::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    bottom: -8px;
-    transform: translateX(-50%);
-    width: 0%;
-    height: 3px;
-    background: linear-gradient(to right, #66bb6a, #43a047);
-    border-radius: 2px;
-    transition: width 0.4s ease;
-  }
-  
-  #siteName:hover {
-    color: #388e3c;
-    transform: scale(1.03);
-  }
-  
-  #siteName:hover::after {
-    width: 80%;
-  }
-  
-  
-  
-  .navbar {
-    display: flex;
-    gap: 1.5rem;
-    align-items: center;
-    justify-content: flex-end;
-    transition: transform 0.3s ease, opacity 0.3s ease-in-out;
-    opacity: 1; 
-    transform: none; 
-  }
-  
-  .navbar a {
-    color: #fff;
-    text-decoration: none;
-    padding: 0.7rem 1.5rem;
-    border-radius: 30px;
-    position: relative; 
-    overflow: hidden; 
-    transition: color 0.3s ease, transform 0.3s ease; 
-  }
+/* NAVBAR SECTION */
+header {
+  background-color: #222222;
+  color: #fff;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
 
-  .navbar a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: #28a745; 
-    transition: width 0.4s ease-in-out, left 0.4s ease-in-out; 
-  }
+header.scrolled {
+  background: rgba(34, 34, 34, 0.7);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
 
-  .navbar a:hover::after {
-    width: 100%; 
-    left: 0; 
-  }
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
 
+.logo {
+  width: 40px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
 
-  .navbar a:hover {
-    color: #28a745;
-    transform: scale(1.1); 
-  }
+.logo:hover {
+  transform: scale(1.1);
+}
 
-  
+#siteName {
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+  position: relative;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#siteName::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -8px;
+  transform: translateX(-50%);
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(to right, #66bb6a, #43a047);
+  border-radius: 2px;
+  transition: width 0.4s ease;
+}
+
+#siteName:hover {
+  color: #388e3c;
+  transform: scale(1.03);
+}
+
+#siteName:hover::after {
+  width: 80%;
+}
+
+.navbar {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: flex-end;
+  transition: transform 0.3s ease, opacity 0.3s ease-in-out;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.7rem 1.2rem;
+  border-radius: 30px;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #28a745;
+  transition: width 0.4s ease-in-out, left 0.4s ease-in-out;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+
+.navbar a:hover {
+  color: #28a745;
+  transform: scale(1.1);
+}
+
+.hamburger {
+  display: none;
+  font-size: 2.5rem;
+  color: #fff;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.3s ease, opacity 0.3s ease-in-out;
+  background-color: transparent;
+  border: none;
+  z-index: 1001;
+}
+
+.hamburger:hover {
+  transform: rotate(90deg);
+}
+
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle:checked + .hamburger + .navbar {
+  left: 0;
+  opacity: 1;
+}
+
+.nav-toggle:checked + .hamburger + .navbar a {
+  transform: translateX(0);
+  opacity: 1;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  transition-delay: 0.2s;
+}
+
+.nav-toggle:checked + .hamburger {
+  opacity: 0.5;
+  transform: rotate(180deg);
+}
+
+/* RESPONSIVE SECTION */
+@media (max-width: 1024px) {
   .hamburger {
-    display: none;
-    font-size: 2.5rem; 
-    color: #fff; 
-    cursor: pointer;
-    user-select: none;
-    transition: transform 0.3s ease, opacity 0.3s ease-in-out;
-    background-color: transparent;
-    border: none; 
-    position: relative;
-    z-index: 1001;
-  }
-  
-  .hamburger:hover {
-    transform: rotate(90deg); 
-  }
-  
-  .nav-toggle {
-    display: none;
+    display: block;
   }
 
-  .navbar a.force-hover {
-    color: #28a745; 
-    transform: scale(1.1);
-}
-
-.navbar a.force-hover::after {
+  .navbar {
+    position: absolute;
+    top: 100%;
+    left: -100%;
     width: 100%;
-    left: 0;
+    height: 100vh;
+    background-color: #222222;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    gap: 2rem;
+    box-shadow: 4px 0 8px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: left 0.3s ease, opacity 0.3s ease-in-out;
+  }
+
+  .navbar a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .logo {
+    width: 30px;
+  }
+
+  #siteName {
+    font-size: 1.5rem;
+  }
 }
 
-  /*RESPONSIVE IN PORTRAIT*/
-  @media (max-width: 768px) {
-    .logo {
-      width: 30px;
-    }
-  
-    #siteName {
-      font-size: 1.4rem;
-    }
 
-
-
-    .navbar {
-      position: absolute;
-      top: 0;
-      left: -100%;
-      height: 100vh;
-      width: 100%;
-      background-color: #222222; 
-      flex-direction: column;
-      justify-content: center;
-      align-items: center; 
-      padding: 2rem;
-      gap: 2rem;
-      box-shadow: 4px 0 8px rgba(0, 0, 0, 0.2); 
-      transition: left 0.3s ease, opacity 0.3s ease-in-out;
-      opacity: 0;
-    }
-      .hamburger {
-      display: block;
-      font-size: 1.4rem;
-    }
-  
-    .nav-toggle:checked + .hamburger + .navbar {
-      left: 0;
-      opacity: 1;
-    }
-  
-    .nav-toggle:checked + .hamburger + .navbar a {
-      opacity: 1;
-      transform: translateX(0);
-      transition: transform 0.4s ease, opacity 0.4s ease;
-      transition-delay: 0.2s; 
-      text-align: center;
-    }
-  
-    .nav-toggle:checked + .hamburger {
-      opacity: 0.5; 
-      transform: rotate(180deg); 
-    }
-  
-    .navbar a {
-      width: 100%;
-      text-align: center; 
-    }
+@media (max-width: 480px) {
+  header {
+    padding: 0.8rem 1rem;
   }
-  
-/* END OF NAVBAR SECTION */
+
+  .logo {
+    width: 25px;
+  }
+
+  #siteName {
+    font-size: 1.2rem;
+  }
+
+  .hamburger {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px), (orientation: portrait) {
+  .hamburger {
+    display: block !important; 
+  }
+
+  .navbar {
+    position: absolute;
+    top: 100%;
+    left: -100%;
+    width: 100%;
+    height: 100vh;
+    background-color: #222222;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    gap: 2rem;
+    opacity: 0;
+    transition: left 0.3s ease, opacity 0.3s ease-in-out;
+  }
+
+  .nav-toggle:checked + .hamburger + .navbar {
+    left: 0;
+    opacity: 1;
+  }
+
+  .navbar a {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  .logo {
+    width: 28px;
+  }
+
+  #siteName {
+    font-size: 1.3rem;
+  }
+}
