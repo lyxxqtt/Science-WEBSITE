@@ -131,8 +131,14 @@
     left: 0;
 }
 
+.nav-toggle:checked + .hamburger + .navbar {
+  left: 0;
+  opacity: 1;
+}
+
+
   /*RESPONSIVE IN PORTRAIT*/
-  @media (max-width: 768px), (orientation: portrait) {
+  @media screen and (max-width: 768px), screen and (orientation: portrait) {
     .hamburger {
       display: block !important; 
       font-size: 1.6rem;
