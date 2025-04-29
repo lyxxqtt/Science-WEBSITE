@@ -141,20 +141,21 @@
 
 
       <!--navbar stay hover-->
-      <script>
+      <script defer>
         document.addEventListener('DOMContentLoaded', () => {
-          const aboutLink = document.querySelector('.navbar a[href="/index.html"]');
+          const aboutLink = document.querySelector('.navbar a[href="index.html"]');
           if (aboutLink) {
             aboutLink.classList.add('force-hover');
           }
         });
       </script>
       
+      
 
       <style>
         .navbar a.force-hover {
-          color: #28a745; 
-          transform: scale(1.1);
+          color: #28a745 !important;
+          transform: scale(1.1) !important;
       }
       
       .navbar a.force-hover::after {
