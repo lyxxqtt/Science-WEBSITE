@@ -6,8 +6,8 @@
     <title>Ecopulse</title>
     <link rel="stylesheet" href="quiz-page.css">
     <script src="main-java.js"></script>
-    <link rel="stylesheet" href="/footer-styles/footer-styles.css">
-    <script src="/footer-styles/footer-styles.js"></script>
+    <link rel="stylesheet" href="footer-styles/footer-styles.css">
+    <script src="footer-styles/footer-styles.js"></script>
     <link rel="stylesheet" href="navbar-styles/navbar.css">
     <script src="navbar-styles/navbar.js"></script>
     <link rel="icon" href="images/icon.svg" type="image/svg+xml">
@@ -16,7 +16,7 @@
     <!-- Navigation Bar -->
     <header>
       <div style="display: flex; align-items: center; gap: 10px;">
-        <img src="/images/icon.svg" alt="Ecopulse Logo" style="height: 55px;">
+        <img src="images/icon.svg" alt="Ecopulse Logo" style="height: 55px;">
         <h1 id="siteName">Ecopulse</h1>
       </div>
 
@@ -34,13 +34,13 @@
     </header>
     <!-- END OF Navigation -->
 
-            <!-- topic section -->
-      <div id="topic"> 
-         <div class="topic-box">
-        <h1 class="topic-title">ECOLOGY</h1>
-          </div>
-        <p class="topic-subtitle">Lorem ipsum dolor sit amet, consectetur</p>
-     </div>
+            <!-- Quiz -->
+            <section class="main">
+              <div class="main-content">
+                <h1><strong>Quiz Time!</strong></h1>
+                <p>Are you ready? Now it's time to test what you've learned.</p>
+              </div>
+          </section>
 
 
 
@@ -50,17 +50,60 @@
           <h3>For Website Users:</h3>
           <ol>
             <li>Click/Press the letter of the correct answer.</li>
-            <li>You have 1 minute to answer each question.</li>
+            <li>Take your time. There is no time limit! </li>
           </ol>
           <h3>For the Class:</h3>
           <ol>
-            <li>Get a 1/4 sheet of yellow paper. Write the numbers 1 to 5 in a column.</li>
-            <li>This quiz is a multiple-choice format. Write the letter of your answer.</li>
-            <li>Capital letters only. No erasures. (There will be deductions)</li>
+            <li>Get a quarter (1/4) sheet of yellow paper. Write the numbers 1 to 5 in a column.</li>
+            <li>Write the letter of the correct answer.</li>
+            <li>Capital letters only. No erasures.</li>
             <li>You have 1 minute to answer each question.</li>
           </ol>
         </div>
       </div>
+
+      <div id="quizBody">
+        <div id="quizText">
+          <h2 id="questionNumberText">Question 1:</h2>
+          <h3 id="questionParagraph">These are organisms that can consume both plant and animal material, making them highly adaptable in their dietary habits.</h3>
+          <div id="choicesContainer">
+            <button class="choiceButton" id="choice1">A. Herbivore</button>
+            <button class="choiceButton" id="choice2">B. Carnivore</button>
+            <button class="choiceButton" id="choice3">C. Omnivore</button>
+            <button class="choiceButton" id="choice4">D. Decomposer</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="results">
+        <div id="resultsText">
+          <h2>Results:</h2>
+          <h3>Your Answers:</h3>
+          <ol>
+            <li id="answer1"></li>
+            <li id="answer2"></li>
+            <li id="answer3"></li>
+            <li id="answer4"></li>
+            <li id="answer5"></li>
+          </ol>
+          <h3>Correct Answers:</h3>
+          <ol>
+            <li> C: Omnivore (These are organisms that can consume both plant and animal material, making them highly adaptable in their dietary habits. Omni = "all") </li>
+            <li> A / D (Desert ecosystems are defined by extremely low rainfall and can be either hot or cold. Antarctica is an example.) </li>
+            <li> A: Earth (The biosphere is part of Earth, but not all of Earth is part of the biosphere.) </li>
+            <li> D: Leave lights and appliances on when not in use. (Please don't waste electricity.) </li>
+            <li> ALL of the above. Each statement touches on a real and important aspect of ecology: <br> <br>
+              A. The study of how organisms interact with each other and their environment. <br>
+              B. A branch of biology that examines ecosystems and the relationships within them. <br>
+              C. The science that explores how living things depend on and impact their surroundings. <br>
+              D. The analysis of energy flow and matter cycling among organisms and the environment.
+            </li>
+          </ol>
+          <!-- Displaying the Score -->
+          <h3 id="score">Your Score: 0/5</h3>
+        </div>
+      </div>
+      
       
       <div id="start">
         <button id="startButton">Start Quiz!</button>
@@ -75,8 +118,11 @@
           <p class="footer-note">Empowering a greener future, one step at a time.</p>
         </div>
       </footer>
-      
 
+      
+      
+      <!-- Quiz Functions -->
+       <script src="quiz-system.js"></script>
 
     <!--navbar stay hover-->
     <script>
@@ -98,5 +144,99 @@
         }
       };
     </script>
+
+        <!-- CSS WHEN U SCROLL IN Main Section-->
+<style>
+  .main-content {
+      opacity: 0;
+      transform: translateY(50px) scale(0.95); 
+      filter: blur(5px); 
+      transition: opacity 1s ease, transform 1s ease, filter 1s ease;
+  }
+  
+  .main-content h1 {
+      transition-delay: 0.2s;
+  }
+  
+  .main-content p {
+      transition-delay: 0.4s;
+  }
+  
+  .main-content.visible {
+      opacity: 1;
+      transform: translateY(0) scale(1); 
+      filter: blur(0); 
+  }
+  </style>
+  
+  <!-- JS WHEN U SCROLL IN Main Section-->
+  <script>
+  const content = document.querySelector('.main-content');
+  
+  const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+          if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+          } else {
+              entry.target.classList.remove('visible');
+          }
+      });
+  }, {
+      threshold: 0.5
+  });
+  
+  observer.observe(content);
+  
+  </script>
+
+
+
+    <!-- JS WHEN U SCROLL IN INSTRUCTION Section-->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const instructions = document.getElementById('instructions');
+    
+        if (instructions) {
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add('visible');
+                } else {
+                  entry.target.classList.remove('visible');
+                }
+              });
+            },
+            {
+              threshold: 0.1
+            }
+          );
+    
+          observer.observe(instructions);
+        } else {
+          console.error('#instructions element not found.');
+        }
+      });
+    </script>
+    
+    <!-- CSS WHEN U SCROLL IN INSTRUCTION Section-->
+     <style>
+#instructions {
+  opacity: 0;
+  transform: translateY(80px) scale(0.95);
+  transition: 
+    opacity 0.8s ease, 
+    transform 0.8s cubic-bezier(0.25, 1.25, 0.5, 1.0);
+  pointer-events: none;
+  filter: blur(4px);
+}
+
+#instructions.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+  filter: blur(0);
+}
+     </style>
   </body>
 </html>

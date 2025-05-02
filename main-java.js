@@ -1,3 +1,5 @@
+
+
 const images = [
     '/images/MAIN-TOPIC-IMAGE-01.png',
     '/images/MAIN-TOPIC-IMAGE-02.png',
@@ -12,11 +14,6 @@ const images = [
   }
 
   setInterval(changeBackground, 5000); 
-
-
-  
-
-
 
 
 

@@ -10,8 +10,118 @@
     scroll-behavior: smooth;
   }
   
-  
-  /* TOPIC SECTION */
+  /* Quiz Intro */
+
+  /* Main Section */
+.main {
+  background-image: url('https://i.makeagif.com/media/9-17-2018/Nr_Wx8.gif');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+  position: relative;
+  background-attachment: fixed;
+}
+
+
+.main::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.main-content {
+  z-index: 1;
+}
+
+.main h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 8px rgba(0, 64, 0, 0.5);
+}
+
+.main p {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  font-family: 'Open Sans', sans-serif;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+  color: #e0e0e0;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .main h1 {
+      font-size: 3rem;
+  }
+  .main p {
+      font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .main h1 {
+      font-size: 2.5rem;
+  }
+  .main p {
+      font-size: 1.2rem;
+      max-width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .main {
+      background-attachment: scroll;
+  }
+  .main h1 {
+      font-size: 2rem;
+  }
+  .main p {
+      font-size: 1.1rem;
+      max-width: 85%;
+  }
+}
+
+@media (max-width: 576px) {
+  .main {
+      background-attachment: scroll;
+  }
+  .main h1 {
+      font-size: 1.8rem;
+  }
+  .main p {
+      font-size: 1rem;
+      max-width: 80%;
+  }
+}
+
+@media (max-width: 375px) {
+  .main {
+      background-attachment: scroll;
+  }
+  .main h1 {
+      font-size: 1.6rem;
+  }
+  .main p {
+      font-size: 0.9rem;
+      max-width: 75%;
+  }
+}
+
+
+/*
+
+    TOPIC SECTION (HINDI NA TO KAILANGAN)
+
   #topic {
     background-image: url('/images/MAIN-TOPIC-IMAGE-01.png');
     background-size: cover;
@@ -82,69 +192,371 @@
     }
   }
 
-  /* END OF TOPIC SECTION */
+  END OF TOPIC SECTION
+
+  */
 
 /* Instructions Section */
 #instructions {
-    display: flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
+  padding: 3rem;
+  background-color: #f4f7fa;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+#instructions:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+}
+
+#insText {
+  max-width: 850px;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: #333;
+  font-family: 'Arial', sans-serif;
+  text-align: left;
+}
+
+#insText h2 {
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #28a745;
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+}
+
+#insText h3 {
+  font-size: 1.6rem;
+  color: #333;
+  margin-top: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid #28a745;
+  padding-bottom: 0.5rem;
+}
+
+#insText ol {
+  list-style-position: inside;
+  margin-left: 2rem;
+  padding-left: 0;
+}
+
+#insText ol li {
+  margin: 1rem 0;
+  font-size: 1.3rem;
+  line-height: 1.6;
+}
+
+#start {
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem;
+}
+
+#start button {
+  background-color: #28a745;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#start button:hover {
+  background-color: #218838;
+}
+
+@media (max-width: 768px) {
+  #instructions {
+    width: 90%;
+    padding: 2rem;
+  }
+
+  #insText h2 {
+    font-size: 2.4rem;
+  }
+
+  #insText h3 {
+    font-size: 1.4rem;
+  }
+
+  #insText ol li {
+    font-size: 1.2rem;
+  }
+
+  #start button {
+    font-size: 1rem;
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  #instructions {
+    width: 95%;
+    padding: 1.5rem;
+  }
+
+  #insText h2 {
+    font-size: 2rem;
+  }
+
+  #insText h3 {
+    font-size: 1.3rem;
+  }
+
+  #insText ol li {
+    font-size: 1.1rem;
+  }
+
+  #start button {
+    font-size: 0.9rem;
+    padding: 8px 14px;
+  }
+}
+
+
+
+  /* Quiz CSS */
+
+  #quizBody {
+    display: none;
     justify-content: center;
+    align-items: center;
     margin-top: 4rem;
     padding: 3rem;
-    background-color: #f4f7fa; 
+    background-color: #f4f7fa;
     border-radius: 15px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-    width: 75%; 
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
-    transition: box-shadow 0.3s ease-in-out;
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+    overflow: hidden;
   }
   
-  #instructions:hover {
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); 
+  #quizBody:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
   }
   
-  #insText {
-    max-width: 850px; 
+  #quizText {
+    max-width: 850px;
     font-size: 1.15rem;
     line-height: 1.7;
     color: #333;
     font-family: 'Arial', sans-serif;
+    text-align: left;
   }
   
-  #insText h2 {
+  #quizText h2 {
     text-align: center;
     font-size: 2.8rem;
-    font-weight: bold;
+    font-weight: 700;
     color: #28a745;
     margin-bottom: 2rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
   }
   
-  #insText h3 {
+  #quizText h3 {
     font-size: 1.6rem;
     color: #333;
     margin-top: 2rem;
     font-weight: 600;
     letter-spacing: 0.5px;
+    border-bottom: 2px solid #28a745;
+    padding-bottom: 0.5rem;
   }
   
-  #insText ol {
+  #quizText ol {
     list-style-position: inside;
     margin-left: 2rem;
-    padding-left: 0; 
+    padding-left: 0;
   }
   
-  #insText ol li {
+  #quizText ol li {
+    margin: 1rem 0;
+    font-size: 1.3rem;
+    line-height: 1.6;
+    position: relative;
+    padding-left: 1.5rem;
+  }
+  
+  #quizText ol li::before {
+    content: '•';
+    color: #28a745;
+    font-size: 2rem;
+    position: absolute;
+    left: 0;
+    top: 0.3rem;
+  }
+  
+  @media (max-width: 768px) {
+    #quizBody {
+      width: 90%;
+      padding: 2rem;
+    }
+  
+    #quizText h2 {
+      font-size: 2.4rem;
+    }
+  
+    #quizText h3 {
+      font-size: 1.4rem;
+    }
+  
+    #quizText ol li {
+      font-size: 1.2rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    #quizBody {
+      width: 95%;
+      padding: 1.5rem;
+    }
+  
+    #quizText h2 {
+      font-size: 2rem;
+    }
+  
+    #quizText h3 {
+      font-size: 1.3rem;
+    }
+  
+    #quizText ol li {
+      font-size: 1.1rem;
+    }
+  }
+  
+
+
+  /* Results CSS */
+
+  #results {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+    padding: 3rem;
+    background-color: #f4f7fa;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+    overflow: hidden;
+  }
+  
+  #results:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+  }
+  
+  #resultsText {
+    max-width: 850px;
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    text-align: left;
+  }
+  
+  #resultsText h2 {
+    text-align: center;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #28a745;
+    margin-bottom: 2rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  
+  #resultsText h3 {
+    font-size: 1.6rem;
+    color: #333;
+    margin-top: 2rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #28a745;
+    padding-bottom: 0.5rem;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  #resultsText h3:hover {
+    color: #218838;
+  }
+  
+  #resultsText ol {
+    list-style-position: inside;
+    margin-left: 2rem;
+    padding-left: 0;
+  }
+  
+  #resultsText ol li {
     margin: 1rem 0;
     font-size: 1.3rem;
     line-height: 1.6;
   }
   
-  #start {
-    display: flex;
-    justify-content: center;
-    margin-top: 4rem;
+  @media (max-width: 768px) {
+    #results {
+      width: 90%;
+      padding: 2rem;
+    }
+  
+    #resultsText h2 {
+      font-size: 2.4rem;
+    }
+  
+    #resultsText h3 {
+      font-size: 1.4rem;
+    }
+  
+    #resultsText ol li {
+      font-size: 1.2rem;
+    }
   }
   
+  @media (max-width: 480px) {
+    #results {
+      width: 95%;
+      padding: 1.5rem;
+    }
+  
+    #resultsText h2 {
+      font-size: 2rem;
+    }
+  
+    #resultsText h3 {
+      font-size: 1.3rem;
+    }
+  
+    #resultsText ol li {
+      font-size: 1.1rem;
+    }
+  }
+  
+
+
+
+  /* Button */
+
   #startButton {
     padding: 1.2rem 3rem;
     font-size: 1.8rem;
@@ -155,6 +567,9 @@
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
     font-weight: 600;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
   }
   
   #startButton:hover {
@@ -166,4 +581,85 @@
     outline: none;
     box-shadow: 0 0 5px rgba(40, 167, 69, 0.7);
   }
+  
+  @media (max-width: 768px) {
+    #startButton {
+      font-size: 1.5rem;
+      max-width: 350px;
+      padding: 1rem 2.5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    #startButton {
+      font-size: 1.3rem;
+      max-width: 300px;
+      padding: 0.8rem 2rem;
+    }
+  }
+  
+  
+
+  /* Choice Buttons */
+
+  #choicesContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 3rem;
+    gap: 1.5rem;
+    padding: 0 2rem;
+  }
+  
+  .choiceButton {
+    padding: 1.2rem 3rem;
+    font-size: 1.4rem;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-weight: 600;
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+  
+  .choiceButton:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+  }
+  
+  .choiceButton:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(40, 167, 69, 0.7);
+  }
+  
+  @media (max-width: 768px) {
+    #choicesContainer {
+      gap: 1rem;
+      padding: 0 1rem;
+    }
+  
+    .choiceButton {
+      font-size: 1.2rem;
+      max-width: 300px;
+      padding: 1rem 2.5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .choiceButton {
+      font-size: 1.1rem;
+      padding: 0.8rem 2rem;
+      max-width: 280px;
+    }
+  }
+  
+
+
+
+
+
   

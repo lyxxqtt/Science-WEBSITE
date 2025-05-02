@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecopulse</title>
+    <link rel="stylesheet" href="ice-breaker.css">
+    <script src="main-java.js"></script>
+    <link rel="stylesheet" href="footer-styles/footer-styles.css">
+    <script src="footer-styles/footer-styles.js"></script>
+    <link rel="stylesheet" href="navbar-styles/navbar.css">
+    <script src="navbar-styles/navbar.js"></script>
+    <link rel="icon" href="images/icon.svg" type="image/svg+xml">
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <header>
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <img src="images/icon.svg" alt="Ecopulse Logo" style="height: 55px;">
+        <h1 id="siteName">Ecopulse</h1>
+      </div>
+
+      <!-- Hamburger Toggle --> <!-- For mobile sizes -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+      <label for="nav-toggle" class="hamburger">&#9776;</label>
+
+      <!-- Navigation -->
+      <nav class="navbar">
+        <a href="index.html"><strong>HOME</strong></a>
+        <a href="ice-breaker.html"><strong>ICE BREAKER</strong></a>
+        <a href="quiz-page.html"><strong>QUIZ</strong></a>
+        <a href="about.html"><strong>ABOUT</strong></a>
+      </nav>
+    </header>
+    <!-- END OF Navigation -->
+
+            <!-- Quiz -->
+            <section class="main">
+              <div class="main-content">
+                <h1><strong>Ice Breaker Activity</strong></h1>
+                <p>Let's see what you already know about the lesson. This is a short activity to "break the ice".</p>
+              </div>
+          </section>
+
+    <div id="instructions">
+        <div id="insText">
+          <h2>Fill in the blanks:</h2>
+
+          <h3>1. A scientist who studies living organisms. <br>
+            <span id="ice1"> - _ _ o l _ g _ s t </span> </h3>
+          <button id="reveal1"> Reveal Answer </button>
+          <h3>2. A large geographical region characterized by specific climatic conditions, vegetation, and animal life. <br>
+            <span id="ice2"> - _ i _ m e </span> </h3>
+          <button id="reveal2"> Reveal Answer </button>
+          <h3>3. A chemical element; it has symbol C. <br>
+            <span id="ice3"> - _ _ r b _ n </span> </h3>
+          <button id="reveal3"> Reveal Answer </button>
+          <h3>4. Refers to saltwater, which comprises over 97% of the Earth's total water supply and covers over 70% of the Earth's surface. <br>
+            <span id="ice4"> - _ _ r _ n e </span> </h3>
+          <button id="reveal4"> Reveal Answer </button>
+          <h3>5. The scientific study of interactions between living organisms and their environment. <br>
+            <span id="ice5"> - _ _ o _ o _ _ </span> </h3>
+          <button id="reveal5"> Reveal Answer </button>
+
+        </div>
+      </div>
+
+      <br>     <br>
+
+      <footer class="footer">
+        <div class="footer-content">
+          <p>&copy; 2025 Ecopulse. All Rights Reserved.</p>
+          <p>Dedicated to Science and Ecology</p>
+          <p class="footer-note">Empowering a greener future, one step at a time.</p>
+        </div>
+      </footer>
+
+      
+
+
+
+      
+      <!-- Ice Breaker Functions -->
+       <script src="ice-breaker.js"></script>
+
+
+    <!--navbar stay hover-->
+    <script>
+      const aboutLink = document.querySelector('.navbar a[href="ice-breaker.html"]');
+      if (aboutLink) {
+        aboutLink.classList.add('force-hover');
+      }
+    </script>
+
+
+    <script>
+      // When scroll the navbar
+      window.onscroll = function() {
+        var header = document.querySelector('header');
+        if (window.scrollY > 50) {  
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      };
+    </script>
+
+        <!-- CSS WHEN U SCROLL IN Main Section-->
+<style>
+  .main-content {
+      opacity: 0;
+      transform: translateY(50px) scale(0.95); 
+      filter: blur(5px); 
+      transition: opacity 1s ease, transform 1s ease, filter 1s ease;
+  }
+  
+  .main-content h1 {
+      transition-delay: 0.2s;
+  }
+  
+  .main-content p {
+      transition-delay: 0.4s;
+  }
+  
+  .main-content.visible {
+      opacity: 1;
+      transform: translateY(0) scale(1); 
+      filter: blur(0); 
+  }
+  </style>
+  
+  <!-- JS WHEN U SCROLL IN Main Section-->
+  <script>
+  const content = document.querySelector('.main-content');
+  
+  const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+          if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+          } else {
+              entry.target.classList.remove('visible');
+          }
+      });
+  }, {
+      threshold: 0.5
+  });
+  
+  observer.observe(content);
+  
+  </script>
+
+
+  <!-- JS WHEN U SCROLL IN FILL IN THE BLANK Section-->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const section = document.getElementById('instructions');
+  
+      if (section) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                section.classList.add('visible');
+              } else {
+                section.classList.remove('visible');
+              }
+            });
+          },
+          { threshold: 0.2 }
+        );
+  
+        observer.observe(section);
+      }
+    });
+  </script>
+  
+  
+  
+  <!-- CSS WHEN U SCROLL IN FILL IN THE BLANK Section-->
+<style>
+#instructions {
+  opacity: 0;
+  transform: translateY(80px) scale(0.95);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s cubic-bezier(0.25, 1.25, 0.5, 1.0),
+    filter 0.8s ease;
+  filter: blur(5px);
+  pointer-events: none;
+}
+
+#instructions.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+  pointer-events: auto;
+}
+
+
+
+</style>
+
+  </body>
+</html>
