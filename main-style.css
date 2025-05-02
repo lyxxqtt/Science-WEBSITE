@@ -144,8 +144,8 @@
 
 .introText ul {
   margin-top: 1rem;
-  list-style-type: none;  /* Removes bullet points */
-  padding-left: 0;  /* Ensures no extra indentation */
+  list-style-type: none;  
+  padding-left: 0;  
 }
 
 .introText ul li {
