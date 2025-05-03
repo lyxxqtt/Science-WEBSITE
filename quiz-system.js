@@ -15,7 +15,7 @@ let correctAnswers = [
   ['A', 'B', 'C', 'D'] // Q5
 ];
 let questionNumber = 1;
-let score = 0; // Variable to keep track of the score
+let score = 0;
 
 // Question Paragraphs
 function showQuestion2() {
@@ -85,7 +85,7 @@ document.getElementById("questionNumberText").textContent = `Question ${question
 
 switch (questionNumber) {
   case 1:
-    showQuestion1(); // You need to add this function if not already there
+    showQuestion1(); 
     break;
   case 2:
     showQuestion2();
