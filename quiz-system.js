@@ -7,11 +7,11 @@ let choice4 = document.getElementById("choice4");
 
 let answers = [];
 let correctAnswers = [
-  'C',             
-  ['A', 'D'],        
-  'A',               
-  'D',              
-  ['A', 'B', 'C', 'D']
+  'C',                 // Question 1
+  ['A', 'D'],          // Question 2
+  'A',                 // Question 3
+  'D',                 // Question 4
+  ['A', 'B', 'C', 'D'] // Question 5
 ];
 let questionNumber = 1;
 let score = 0;
@@ -67,59 +67,63 @@ function showQuestion5() {
   choice4.textContent = "D. The analysis of energy flow and matter cycling among organisms and the environment.";
 }
 
-// Button Functions
+// Start button
 startButton.addEventListener("click", function() {
   document.getElementById("startButton").style.display = "none";
   document.getElementById("instructions").style.display = "none";
   document.getElementById("quizBody").style.display = "flex";
+  showQuestion1(); // Show the first question on start
 });
 
+// Next question handler
 function nextQuestion() {
   questionNumber++;
   
   if (questionNumber == 6) {
-  console.log(answers);
-  document.getElementById("quizBody").style.display = "none";
-  document.getElementById("results").style.display = "flex";
+    console.log(answers);
+    document.getElementById("quizBody").style.display = "none";
+    document.getElementById("results").style.display = "flex";
 
-  for (let i = 0; i < answers.length; i++) {
-    document.getElementById(`answer${i + 1}`).textContent = answers[i];
-  }
+    for (let i = 0; i < answers.length; i++) {
+      document.getElementById(`answer${i + 1}`).textContent = answers[i];
+    }
 
-  // Calculate the score 
-  for (let i = 0; i < answers.length; i++) {
-    let correct = correctAnswers[i];
-    if (Array.isArray(correct)) {
-      if (correct.includes(answers[i])) {
-        score++;
-      }
-    } else {
-      if (answers[i] === correct) {
-        score++;
+    // Calculate the score 
+    for (let i = 0; i < answers.length; i++) {
+      let correct = correctAnswers[i];
+      if (Array.isArray(correct)) {
+        if (correct.includes(answers[i])) {
+          score++;
+        }
+      } else {
+        if (answers[i] === correct) {
+          score++;
+        }
       }
     }
+
+    // Display score
+    document.getElementById("score").textContent = `Your Score: ${score} / 5`;
+    return;
   }
 
-  // Display score
-  document.getElementById("score").textContent = `Your Score: ${score} / 5`;
-}
-
   switch (questionNumber) {
-  case 1:
-    showQuestion1();
-    break;
-  case 2:
-    showQuestion2();
-    break;
-  case 3:
-    showQuestion3();
-    break;
-  case 4:
-    showQuestion4();
-    break;
-  case 5:
-    showQuestion5();
-    break;
+    case 1:
+      showQuestion1();
+      break;
+    case 2:
+      showQuestion2();
+      break;
+    case 3:
+      showQuestion3();
+      break;
+    case 4:
+      showQuestion4();
+      break;
+    case 5:
+      showQuestion5();
+      break;
+  }
 }
 
 // Answer Choice Click Events
