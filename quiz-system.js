@@ -7,7 +7,6 @@ let choice3 = document.getElementById("choice3");
 let choice4 = document.getElementById("choice4");
 
 let answers = [];
-let answers = [];
 let correctAnswers = [
   ['C'],             // Q1
   ['A', 'D'],        // Q2
