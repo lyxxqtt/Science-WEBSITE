@@ -17,6 +17,16 @@ let questionNumber = 1;
 let score = 0;
 
 // Question Paragraphs
+function showQuestion1() {
+  document.getElementById("questionParagraph").innerHTML = 
+    "Which of the following is a renewable resource?";
+
+  choice1.textContent = "A. Coal";
+  choice2.textContent = "B. Oil";
+  choice3.textContent = "C. Solar Energy";
+  choice4.textContent = "D. Natural Gas";
+}
+
 function showQuestion2() {
   document.getElementById("questionParagraph").innerHTML = 
     "Desert ecosystems are defined by extremely low rainfall and can be either hot or cold. Hot deserts, such as the Sahara, are characterized by intense heat during the day and cold temperatures at night. <br><br> Having said that, do Cold Deserts exist?";
