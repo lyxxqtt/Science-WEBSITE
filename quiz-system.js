@@ -6,11 +6,10 @@ let choice2 = document.getElementById("choice2");
 let choice3 = document.getElementById("choice3");
 let choice4 = document.getElementById("choice4");
 
-let answers = [];
 let correctAnswers = [
-  ['C'],             // Q1
-  ['A', 'D'],        // Q2
-  ['A'],             // Q3
+  ['D'],             // Q1
+  ['D'],             // Q2
+  ['D'],             // Q3
   ['D'],             // Q4
   ['A', 'B', 'C', 'D'] // Q5
 ];
