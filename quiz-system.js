@@ -94,21 +94,22 @@ function nextQuestion() {
   document.getElementById("score").textContent = `Your Score: ${score} / 5`;
 }
 
-  document.getElementById("questionNumberText").textContent = `Question ${questionNumber}:`;
   switch (questionNumber) {
-    case 2:
-      showQuestion2();
-      break;
-    case 3:
-      showQuestion3();
-      break;
-    case 4:
-      showQuestion4();
-      break;
-    case 5:
-      showQuestion5();
-      break;
-  }
+  case 1:
+    showQuestion1();
+    break;
+  case 2:
+    showQuestion2();
+    break;
+  case 3:
+    showQuestion3();
+    break;
+  case 4:
+    showQuestion4();
+    break;
+  case 5:
+    showQuestion5();
+    break;
 }
 
 // Answer Choice Click Events
