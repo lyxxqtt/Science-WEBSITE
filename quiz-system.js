@@ -1,4 +1,3 @@
-// Required Variables
 const startButton = document.getElementById("startButton");
 
 let choice1 = document.getElementById("choice1");
@@ -7,34 +6,24 @@ let choice3 = document.getElementById("choice3");
 let choice4 = document.getElementById("choice4");
 
 let answers = [];
-let correctAnswers = ['C', ['A', 'D'], 'A', 'D', 'A'];
-for (let i = 0; i < answers.length; i++) {
-  let correct = correctAnswers[i];
-  if (Array.isArray(correct)) {
-    if (correct.includes(answers[i])) {
-      score++;
-    }
-  } else {
-    if (answers[i] === correct) {
-      score++;
-    }
-  }
-}
+let correctAnswers = ['C', ['A', 'D'], 'A', 'D', 'A']; // Supports multiple correct answers
 let questionNumber = 1;
-let score = 0; // Variable to keep track of the score
+let score = 0;
 
 // Question Paragraphs
 function showQuestion2() {
-  document.getElementById("questionParagraph").innerHTML = "Desert ecosystems are defined by extremely low rainfall and can be either hot or cold. Hot deserts, such as the Sahara, are characterized by intense heat during the day and cold temperatures at night. <br><br> Having said that, do Cold Deserts exist?";
+  document.getElementById("questionParagraph").innerHTML = 
+    "Desert ecosystems are defined by extremely low rainfall and can be either hot or cold. Hot deserts, such as the Sahara, are characterized by intense heat during the day and cold temperatures at night. <br><br> Having said that, do Cold Deserts exist?";
   
-  choice1.textContent = ("A. Yes");
-  choice2.textContent = ("B. No");
-  choice3.textContent = ("C. Maybe");
-  choice4.textContent = ("D. Definitely");
+  choice1.textContent = "A. Yes";
+  choice2.textContent = "B. No";
+  choice3.textContent = "C. Maybe";
+  choice4.textContent = "D. Definitely";
 }
 
 function showQuestion3() {
-  document.getElementById("questionParagraph").innerHTML = "The biosphere is defined as the largest scale of the ecological organization where all ecosystems (and biomes) in the world interact. It is the total of all ecosystems on the planet. <br><br> Which is NOT part of the biosphere?";
+  document.getElementById("questionParagraph").innerHTML = 
+    "The biosphere is defined as the largest scale of the ecological organization where all ecosystems (and biomes) in the world interact. It is the total of all ecosystems on the planet. <br><br> Which is NOT part of the biosphere?";
   
   choice1.textContent = "A. Earth";
   choice2.textContent = "B. Ecosystems";
@@ -43,7 +32,8 @@ function showQuestion3() {
 }
 
 function showQuestion4() {
-  document.getElementById("questionParagraph").innerHTML = "Which of the following is NOT an eco-friendly habit for students?";
+  document.getElementById("questionParagraph").innerHTML = 
+    "Which of the following is NOT an eco-friendly habit for students?";
   
   choice1.textContent = "A. Bring a reusable water bottle instead of buying plastic ones.";
   choice2.textContent = "B. Participate in local clean-up drives or tree planting.";
@@ -52,7 +42,8 @@ function showQuestion4() {
 }
 
 function showQuestion5() {
-  document.getElementById("questionParagraph").innerHTML = "Which of the following describes Ecology?";
+  document.getElementById("questionParagraph").innerHTML = 
+    "Which of the following describes Ecology?";
   
   choice1.textContent = "A. The study of how organisms interact with each other and their environment.";
   choice2.textContent = "B. A branch of biology that examines ecosystems and the relationships within them.";
@@ -62,13 +53,14 @@ function showQuestion5() {
 
 // Button Functions
 startButton.addEventListener("click", function() {
-    document.getElementById("startButton").style.display = "none";
-    document.getElementById("instructions").style.display = "none";
-    document.getElementById("quizBody").style.display = "flex";
+  document.getElementById("startButton").style.display = "none";
+  document.getElementById("instructions").style.display = "none";
+  document.getElementById("quizBody").style.display = "flex";
 });
 
 function nextQuestion() {
   questionNumber++;
+  
   if (questionNumber == 6) {
     console.log(answers);
     document.getElementById("quizBody").style.display = "none";
@@ -78,15 +70,24 @@ function nextQuestion() {
       document.getElementById(`answer${i + 1}`).textContent = answers[i];
     }
 
-    // Calculate the score
+    // Calculate the score (supports multiple correct answers)
     for (let i = 0; i < answers.length; i++) {
-      if (answers[i] === correctAnswers[i]) {
-        score++;
+      let correct = correctAnswers[i];
+      if (Array.isArray(correct)) {
+        if (correct.includes(answers[i])) {
+          score++;
+        }
+      } else {
+        if (answers[i] === correct) {
+          score++;
+        }
       }
     }
+
     // Display score
     document.getElementById("score").textContent = `Your Score: ${score} / 5`;
   }
+
   document.getElementById("questionNumberText").textContent = `Question ${questionNumber}:`;
   switch (questionNumber) {
     case 2:
@@ -101,9 +102,10 @@ function nextQuestion() {
     case 5:
       showQuestion5();
       break;
-  }    
+  }
 }
 
+// Answer Choice Click Events
 choice1.addEventListener("click", function() {
   answers.push("A");
   nextQuestion();
