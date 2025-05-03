@@ -1,3 +1,4 @@
+// Required Variables
 const startButton = document.getElementById("startButton");
 
 let choice1 = document.getElementById("choice1");
@@ -6,25 +7,11 @@ let choice3 = document.getElementById("choice3");
 let choice4 = document.getElementById("choice4");
 
 let answers = [];
-let correctAnswers = [
-  ['C'],            
-  ['A', 'D'],     
-  ['A'],         
-  ['D'],           
-  ['A', 'B', 'C', 'D'] 
-];
-
+let correctAnswers = ['C', 'A', 'A', 'D', 'A']; // Correct answers for each question
 let questionNumber = 1;
-let score = 0;
+let score = 0; // Variable to keep track of the score
 
-function showQuestion1() {
-  document.getElementById("questionParagraph").innerHTML = "These are organisms that can consume both plant and animal material, making them highly adaptable in their dietary habits.";
-  choice1.textContent = "A. Herbivore";
-  choice2.textContent = "B. Carnivore";
-  choice3.textContent = "C. Omnivore";
-  choice4.textContent = "D. Decomposer";
-}
-
+// Question Paragraphs
 function showQuestion2() {
   document.getElementById("questionParagraph").innerHTML = "Desert ecosystems are defined by extremely low rainfall and can be either hot or cold. Hot deserts, such as the Sahara, are characterized by intense heat during the day and cold temperatures at night. <br><br> Having said that, do Cold Deserts exist?";
   
@@ -61,27 +48,17 @@ function showQuestion5() {
   choice4.textContent = "D. The analysis of energy flow and matter cycling among organisms and the environment.";
 }
 
+// Button Functions
 startButton.addEventListener("click", function() {
-  document.getElementById("startButton").style.display = "none";
-  document.getElementById("instructions").style.display = "none";
-  document.getElementById("quizBody").style.display = "flex";
-  document.getElementById("questionNumberText").textContent = `Question 1:`;
-  showQuestion1();
+    document.getElementById("startButton").style.display = "none";
+    document.getElementById("instructions").style.display = "none";
+    document.getElementById("quizBody").style.display = "flex";
 });
-
-function calculateScore() {
-  score = 0;
-  for (let i = 0; i < answers.length; i++) {
-    if (correctAnswers[i].includes(answers[i])) {
-      score++;
-    }
-  }
-  document.getElementById("score").textContent = `Your Score: ${score} / 5`;
-}
 
 function nextQuestion() {
   questionNumber++;
-  if (questionNumber === 6) {
+  if (questionNumber == 6) {
+    console.log(answers);
     document.getElementById("quizBody").style.display = "none";
     document.getElementById("results").style.display = "flex";
 
@@ -89,12 +66,16 @@ function nextQuestion() {
       document.getElementById(`answer${i + 1}`).textContent = answers[i];
     }
 
-    calculateScore();
-    return;
+    // Calculate the score
+    for (let i = 0; i < answers.length; i++) {
+      if (answers[i] === correctAnswers[i]) {
+        score++;
+      }
+    }
+    // Display score
+    document.getElementById("score").textContent = `Your Score: ${score} / 5`;
   }
-
   document.getElementById("questionNumberText").textContent = `Question ${questionNumber}:`;
-
   switch (questionNumber) {
     case 2:
       showQuestion2();
@@ -108,7 +89,7 @@ function nextQuestion() {
     case 5:
       showQuestion5();
       break;
-  }
+  }    
 }
 
 choice1.addEventListener("click", function() {
@@ -123,7 +104,7 @@ choice2.addEventListener("click", function() {
 
 choice3.addEventListener("click", function() {
   answers.push("C");
-  nextQuestion();
+  nextQuestion();  
 });
 
 choice4.addEventListener("click", function() {
