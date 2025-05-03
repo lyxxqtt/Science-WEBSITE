@@ -7,11 +7,11 @@ let choice4 = document.getElementById("choice4");
 
 let answers = [];
 let correctAnswers = [
-  'C',               // Q1: Omnivore
-  ['A', 'D'],        // Q2: A or D
-  'A',               // Q3: Earth
-  'D',               // Q4: Not eco-friendly
-  ['A', 'B', 'C', 'D'] // Q5: All of the above
+  'C',             
+  ['A', 'D'],        
+  'A',               
+  'D',              
+  ['A', 'B', 'C', 'D']
 ];
 let questionNumber = 1;
 let score = 0;
@@ -76,7 +76,7 @@ function nextQuestion() {
     document.getElementById(`answer${i + 1}`).textContent = answers[i];
   }
 
-  // Calculate the score (supports multiple correct answers)
+  // Calculate the score 
   for (let i = 0; i < answers.length; i++) {
     let correct = correctAnswers[i];
     if (Array.isArray(correct)) {
