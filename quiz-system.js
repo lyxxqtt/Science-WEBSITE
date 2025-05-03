@@ -68,31 +68,31 @@ function nextQuestion() {
   questionNumber++;
   
   if (questionNumber == 6) {
-    console.log(answers);
-    document.getElementById("quizBody").style.display = "none";
-    document.getElementById("results").style.display = "flex";
+  console.log(answers);
+  document.getElementById("quizBody").style.display = "none";
+  document.getElementById("results").style.display = "flex";
 
-    for (let i = 0; i < answers.length; i++) {
-      document.getElementById(`answer${i + 1}`).textContent = answers[i];
-    }
+  for (let i = 0; i < answers.length; i++) {
+    document.getElementById(`answer${i + 1}`).textContent = answers[i];
+  }
 
-    // Calculate the score (supports multiple correct answers)
-    for (let i = 0; i < answers.length; i++) {
-  let correct = correctAnswers[i];
-  if (Array.isArray(correct)) {
-    if (correct.includes(answers[i])) {
-      score++;
-    }
-  } else {
-    if (answers[i] === correct) {
-      score++;
+  // Calculate the score (supports multiple correct answers)
+  for (let i = 0; i < answers.length; i++) {
+    let correct = correctAnswers[i];
+    if (Array.isArray(correct)) {
+      if (correct.includes(answers[i])) {
+        score++;
+      }
+    } else {
+      if (answers[i] === correct) {
+        score++;
+      }
     }
   }
+
+  // Display score
+  document.getElementById("score").textContent = `Your Score: ${score} / 5`;
 }
-
-    // Display score
-    document.getElementById("score").textContent = `Your Score: ${score} / 5`;
-  }
 
   document.getElementById("questionNumberText").textContent = `Question ${questionNumber}:`;
   switch (questionNumber) {
