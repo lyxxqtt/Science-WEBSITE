@@ -1,4 +1,6 @@
+
 // Required Variables
+
 const startButton = document.getElementById("startButton");
 
 let choice1 = document.getElementById("choice1");
@@ -7,17 +9,13 @@ let choice3 = document.getElementById("choice3");
 let choice4 = document.getElementById("choice4");
 
 let answers = [];
-let correctAnswers = [
-  ['C'],             // Q1
-  ['A', 'D'],        // Q2
-  ['A'],             // Q3
-  ['D'],             // Q4
-  ['A', 'B', 'C', 'D'] // Q5
-];
+
 let questionNumber = 1;
-let score = 0; // Variable to keep track of the score
+
 
 // Question Paragraphs
+
+
 function showQuestion2() {
   document.getElementById("questionParagraph").innerHTML = "Desert ecosystems are defined by extremely low rainfall and can be either hot or cold. Hot deserts, such as the Sahara, are characterized by intense heat during the day and cold temperatures at night. <br><br> Having said that, do Cold Deserts exist?";
   
@@ -55,51 +53,41 @@ function showQuestion5() {
 }
 
 // Button Functions
+
 startButton.addEventListener("click", function() {
-    document.getElementById("startButton").style.display = "none";
-    document.getElementById("instructions").style.display = "none";
-    document.getElementById("quizBody").style.display = "flex";
-});
+    document.getElementById("startButton").style.display= "none";
+    document.getElementById("instructions").style.display= "none";
+    document.getElementById("quizBody").style.display= "flex";
+  });
 
 function nextQuestion() {
   questionNumber++;
   if (questionNumber == 6) {
     console.log(answers);
-    document.getElementById("quizBody").style.display = "none";
-    document.getElementById("results").style.display = "flex";
+    document.getElementById("quizBody").style.display= "none";
+    document.getElementById("results").style.display= "flex";
 
     for (let i = 0; i < answers.length; i++) {
       document.getElementById(`answer${i + 1}`).textContent = answers[i];
     }
-
-    // Calculate the score
-    for (let i = 0; i < answers.length; i++) {
-  if (correctAnswers[i].includes(answers[i])) {
-    score++;
   }
+  document.getElementById("questionNumberText").textContent = `Question ${questionNumber}:`;
+  switch (questionNumber) {
+    case 2:
+      showQuestion2();
+      break;
+    case 3:
+      showQuestion3();
+      break;
+    case 4:
+      showQuestion4();
+      break;
+    case 5:
+      showQuestion5();
+      break;
+  }    
 }
-    // Display score
-document.getElementById("score").textContent = `Your Score: ${score} / 5`;
-}
-document.getElementById("questionNumberText").textContent = `Question ${questionNumber}:`;
 
-switch (questionNumber) {
-  case 1:
-    showQuestion1(); // You need to add this function if not already there
-    break;
-  case 2:
-    showQuestion2();
-    break;
-  case 3:
-    showQuestion3();
-    break;
-  case 4:
-    showQuestion4();
-    break;
-  case 5:
-    showQuestion5();
-    break;
-}
 
 choice1.addEventListener("click", function() {
   answers.push("A");
@@ -113,10 +101,20 @@ choice2.addEventListener("click", function() {
 
 choice3.addEventListener("click", function() {
   answers.push("C");
-  nextQuestion();
+  nextQuestion();  
 });
 
 choice4.addEventListener("click", function() {
   answers.push("D");
   nextQuestion();
 });
+
+
+
+
+
+
+
+
+
+
