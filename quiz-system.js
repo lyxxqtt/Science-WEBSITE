@@ -7,7 +7,19 @@ let choice3 = document.getElementById("choice3");
 let choice4 = document.getElementById("choice4");
 
 let answers = [];
-let correctAnswers = ['C', 'A', 'A', 'D', 'A']; // Correct answers for each question
+let correctAnswers = ['C', ['A', 'D'], 'A', 'D', 'A'];
+for (let i = 0; i < answers.length; i++) {
+  let correct = correctAnswers[i];
+  if (Array.isArray(correct)) {
+    if (correct.includes(answers[i])) {
+      score++;
+    }
+  } else {
+    if (answers[i] === correct) {
+      score++;
+    }
+  }
+}
 let questionNumber = 1;
 let score = 0; // Variable to keep track of the score
 
