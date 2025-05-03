@@ -6,7 +6,13 @@ let choice3 = document.getElementById("choice3");
 let choice4 = document.getElementById("choice4");
 
 let answers = [];
-let correctAnswers = ['C', ['A', 'D'], 'A', 'D', 'A']; // Supports multiple correct answers
+let correctAnswers = [
+  'C',               // Q1: Omnivore
+  ['A', 'D'],        // Q2: A or D
+  'A',               // Q3: Earth
+  'D',               // Q4: Not eco-friendly
+  ['A', 'B', 'C', 'D'] // Q5: All of the above
+];
 let questionNumber = 1;
 let score = 0;
 
@@ -72,17 +78,17 @@ function nextQuestion() {
 
     // Calculate the score (supports multiple correct answers)
     for (let i = 0; i < answers.length; i++) {
-      let correct = correctAnswers[i];
-      if (Array.isArray(correct)) {
-        if (correct.includes(answers[i])) {
-          score++;
-        }
-      } else {
-        if (answers[i] === correct) {
-          score++;
-        }
-      }
+  let correct = correctAnswers[i];
+  if (Array.isArray(correct)) {
+    if (correct.includes(answers[i])) {
+      score++;
     }
+  } else {
+    if (answers[i] === correct) {
+      score++;
+    }
+  }
+}
 
     // Display score
     document.getElementById("score").textContent = `Your Score: ${score} / 5`;
