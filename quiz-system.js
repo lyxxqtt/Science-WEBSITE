@@ -5,14 +5,9 @@ let choice1 = document.getElementById("choice1");
 let choice2 = document.getElementById("choice2");
 let choice3 = document.getElementById("choice3");
 let choice4 = document.getElementById("choice4");
+
 let answers = [];
-let correctAnswers = [
-  ['D'],             // Q1
-  ['D'],             // Q2
-  ['D'],             // Q3
-  ['D'],             // Q4
-  ['A', 'B', 'C', 'D'] // Q5
-];
+let correctAnswers = ['C', 'A', 'A', 'D', 'A']; // Correct answers for each question
 let questionNumber = 1;
 let score = 0; // Variable to keep track of the score
 
@@ -71,23 +66,17 @@ function nextQuestion() {
       document.getElementById(`answer${i + 1}`).textContent = answers[i];
     }
 
-    // Calculate the score based on answers
+    // Calculate the score
     for (let i = 0; i < answers.length; i++) {
-      if (correctAnswers[i].includes(answers[i])) {
+      if (answers[i] === correctAnswers[i]) {
         score++;
       }
     }
-    
     // Display score
     document.getElementById("score").textContent = `Your Score: ${score} / 5`;
   }
-  
   document.getElementById("questionNumberText").textContent = `Question ${questionNumber}:`;
-
   switch (questionNumber) {
-    case 1:
-      showQuestion1(); // You need to add this function if not already there
-      break;
     case 2:
       showQuestion2();
       break;
@@ -100,7 +89,7 @@ function nextQuestion() {
     case 5:
       showQuestion5();
       break;
-  }
+  }    
 }
 
 choice1.addEventListener("click", function() {
@@ -115,7 +104,7 @@ choice2.addEventListener("click", function() {
 
 choice3.addEventListener("click", function() {
   answers.push("C");
-  nextQuestion();
+  nextQuestion();  
 });
 
 choice4.addEventListener("click", function() {
